@@ -11,6 +11,18 @@ const uploadVideo = require('./multerVideo');
 const path = require('path');
 const fs = require('fs');
 
+// Ensure uploads directory exists
+const uploadsDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
+// Ensure assets directory exists (for any additional files)
+const assetsDir = path.join(__dirname, 'assets');
+if (!fs.existsSync(assetsDir)) {
+    fs.mkdirSync(assetsDir, { recursive: true });
+}
+
 // Keep the API process alive even if Atlas is temporarily unreachable.
 let isDatabaseReady = false;
 
