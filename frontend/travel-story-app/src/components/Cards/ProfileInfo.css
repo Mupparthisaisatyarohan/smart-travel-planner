@@ -1,0 +1,147 @@
+.profile-info-wrapper {
+    position: relative;
+}
+
+.ProfileInfo {
+    height: auto;
+    min-width: 180px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid rgba(148, 163, 184, 0.34);
+    cursor: pointer;
+}
+
+.profile-pic-container {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background-color: #dbeafe;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+    color: #1e3a8a;
+}
+
+.profile-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #0f172a;
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.profile-caret {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    width: 250px;
+    background: #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 12px;
+    box-shadow: 0 18px 32px rgba(15, 23, 42, 0.16);
+    padding: 0.85rem;
+    z-index: 1300;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 14px;
+    color: #1f2937;
+}
+
+.profile-details h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.profile-details p {
+    margin: 0;
+    font-size: 0.86rem;
+    color: #475569;
+    word-break: break-word;
+}
+
+.logout-button {
+    background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%);
+    color: #ffffff;
+    padding: 0.55rem 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-top: 0.3rem;
+    align-self: flex-start;
+}
+
+.logout-button:hover {
+    filter: brightness(0.95);
+}
+
+@media (max-width: 1024px) {
+    .ProfileInfo {
+        min-width: 160px;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .profile-name {
+        max-width: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-info-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ProfileInfo {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .profile-dropdown {
+        width: min(320px, 92vw);
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .ProfileInfo {
+        min-width: 0;
+        gap: 0.5rem;
+    }
+
+    .profile-pic-container {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 13px;
+    }
+
+    .profile-name {
+        font-size: 0.86rem;
+    }
+}

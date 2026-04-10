@@ -1,0 +1,302 @@
+.modal-whole-container {
+    position: static;
+    width: min(900px, 100%);
+    margin: 0 auto;
+    background-color: #ffffff;
+    max-height: 76vh;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.modal-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.modal-heading h5 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.01em;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.7rem;
+}
+
+.add-story-button,
+.cancel-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.58rem 1rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.add-story-button {
+    background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(2, 132, 199, 0.28);
+}
+
+.add-story-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 24px rgba(2, 132, 199, 0.33);
+}
+
+.cancel-button {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+}
+
+.cancel-button:hover {
+    background: #f8fafc;
+    transform: rotate(90deg);
+}
+
+.input-label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 0.35rem;
+    display: block;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.input-box,
+.story-input-box,
+.plan-input {
+    width: 100%;
+    padding: 0.72rem 0.8rem;
+    border: 1px solid #d6dee7;
+    border-radius: 0.65rem;
+    font-size: 0.96rem;
+    color: #0f172a;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-box:focus,
+.story-input-box:focus,
+.plan-input:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+}
+
+.date-input {
+    margin-right: 0;
+}
+
+.story-container {
+    margin-top: 0.1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-input-box {
+    min-height: 150px;
+    resize: vertical;
+    overflow-y: auto;
+}
+
+.plan-budget-container {
+    margin-top: 0.2rem;
+}
+
+.plan-budget-summary {
+    margin-top: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    font-size: 0.92rem;
+    color: #0f172a;
+}
+
+.plan-budget-summary span {
+    display: inline-block;
+    padding: 0.38rem 0.7rem;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #f1f9ff 0%, #e0f2fe 100%);
+    border: 1px solid #bae6fd;
+    font-weight: 600;
+}
+
+.plan-details-panel {
+    margin-top: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 0.8rem;
+    padding: 0.95rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.plan-details-panel h4 {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.plan-location-block {
+    margin-bottom: 1rem;
+}
+
+.plan-location-title {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.45rem;
+}
+
+.plan-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.7rem;
+    overflow-x: auto;
+    border-radius: 0.6rem;
+    display: block;
+}
+
+.plan-details-table th,
+.plan-details-table td {
+    border: 1px solid #e2e8f0;
+    padding: 0.62rem;
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.9rem;
+}
+
+.plan-details-table th {
+    background: #eaf6ff;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.plan-row-button {
+    margin-top: 0.45rem;
+    padding: 0.42rem 0.74rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plan-row-button.add {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #ffffff;
+}
+
+.plan-row-button.remove {
+    background: linear-gradient(135deg, #f87171 0%, #dc2626 100%);
+    color: #ffffff;
+}
+
+.plan-row-button:hover {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+    .modal-whole-container {
+        width: min(100%, 880px);
+    }
+
+    .plan-details-panel {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .plan-details-table {
+        min-width: 520px;
+    }
+}
+
+@media (max-width: 640px) {
+    .modal-whole-container {
+        width: 100%;
+        max-height: 74vh;
+        padding: 0.72rem;
+    }
+
+    .modal-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.7rem;
+    }
+
+    .buttons-container {
+        justify-content: space-between;
+    }
+
+    .add-story-button {
+        flex: 1;
+    }
+
+    .plan-details-table th,
+    .plan-details-table td {
+        padding: 0.52rem;
+        font-size: 0.84rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-heading h5 {
+        font-size: 1.1rem;
+    }
+
+    .add-story-button,
+    .cancel-button {
+        font-size: 0.68rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .input-label {
+        font-size: 0.8rem;
+    }
+
+    .input-box,
+    .story-input-box,
+    .plan-input {
+        font-size: 0.9rem;
+        padding: 0.62rem 0.7rem;
+    }
+
+    .story-input-box {
+        min-height: 120px;
+    }
+
+    .plan-budget-summary {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .plan-details-table {
+        min-width: 440px;
+    }
+}

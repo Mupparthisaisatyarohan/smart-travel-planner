@@ -1,0 +1,130 @@
+.filter-info-container {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #0ea5e9;
+}
+
+.filter-info-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #1e293b;
+    margin: 0;
+}
+
+.filter-info-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-info-wrapper .filter-info-title {
+    flex: 0 0 auto;
+}
+
+.filter-info-wrapper .date-range-chip {
+    margin-left: auto;
+}
+
+.date-range-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid #7dd3fc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.date-range-chip:hover {
+    background: linear-gradient(135deg, #bae6fd 0%, #7dd3fc 100%);
+    border-color: #38bdf8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.date-range-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #0c4a6e;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.date-range-close-button {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0c4a6e;
+    transition: all 0.2s ease;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.date-range-close-button:hover {
+    background-color: #ffffff;
+    color: #dc2626;
+    transform: scale(1.15) rotate(90deg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.date-range-close-button:active {
+    transform: scale(0.95) rotate(90deg);
+}
+
+.search-results-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #1e293b;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .filter-info-container {
+        padding: 12px 14px;
+        margin-bottom: 14px;
+    }
+
+    .filter-info-title,
+    .search-results-title {
+        font-size: 1rem;
+    }
+
+    .date-range-chip {
+        width: 100%;
+        justify-content: space-between;
+        padding: 9px 12px;
+    }
+
+    .date-range-text {
+        font-size: 0.82rem;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-info-wrapper {
+        gap: 10px;
+    }
+
+    .date-range-close-button {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        min-height: 22px;
+    }
+}
+

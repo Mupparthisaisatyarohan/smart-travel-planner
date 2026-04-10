@@ -1,0 +1,126 @@
+.tag-input-wrapper {
+  width: 100%;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+  color: #0f172a;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  border: 1px solid #bae6fd;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+}
+
+.tag-icon {
+  color: #0284c7;
+  font-size: 1rem;
+}
+
+.tag-button {
+  background-color: transparent;
+  border: none;
+  color: #475569;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tag-button:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.tag-input-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.location-input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 13px;
+  border-radius: 12px;
+  border: 1px solid #d6dee7;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.location-input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+.add-new-tag {
+  background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%);
+  border: none;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(2, 132, 199, 0.24);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.add-new-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(2, 132, 199, 0.3);
+}
+
+.location-warning {
+  margin-top: 10px;
+  color: #7c3aed;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 640px) {
+  .tag-input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-new-tag {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tag-container {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .tag {
+    font-size: 0.82rem;
+    padding: 6px 9px;
+  }
+
+  .location-input {
+    font-size: 0.9rem;
+    padding: 10px 11px;
+  }
+}

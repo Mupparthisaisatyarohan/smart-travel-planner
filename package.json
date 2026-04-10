@@ -1,0 +1,11 @@
+{
+  "name": "travel-story",
+  "version": "1.0.0",
+  "description": "Travel Story Application",
+  "scripts": {
+    "dev:backend": "cd backend && npm start",
+    "dev:frontend": "cd frontend/travel-story-app && npm run dev",
+    "dev": "npm run dev:frontend",
+    "build": "cd frontend/travel-story-app && npm run build"
+  }
+}

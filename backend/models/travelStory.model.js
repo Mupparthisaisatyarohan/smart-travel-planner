@@ -1,0 +1,21 @@
+const mongoose=require('mongoose');
+const Schema=mongoose.Schema;
+
+const travelStorySchema=new Schema({
+    title:{type:String,required:true},
+    story:{type:String,required:true},
+    visitedLocation:{type:[String],default:[]},
+    entryType:{type:String,enum:['story','plan'],default:'story'},
+    planDetails:{type:Schema.Types.Mixed,default:{}},
+    planBudget:{type:Number,default:0},
+    isFavorite:{type:Boolean,default:false},
+    isShared:{type:Boolean,default:false},
+    userId:{type:Schema.Types.ObjectId,ref:'User',required:true},
+    createdOn:{type:Date,default:Date.now},
+    imageUrl:{type:String,required:true},
+    videoUrl:{type:String,default:null},
+    visitedDate:{type:Date,required:true}
+
+});
+
+module.exports=mongoose.model('TravelStory',travelStorySchema);
