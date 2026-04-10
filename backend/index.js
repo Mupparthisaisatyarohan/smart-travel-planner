@@ -1,11 +1,11 @@
 require('dotenv').config();
 
 const config = require('./config.json');
-const bcrypt=require('bcrypt');
+const bcrypt = require('bcrypt');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const {authenticateToken} = require('./utilities');
+const { authenticateToken } = require('./utilities');
 const upload = require('./multer');
 const uploadVideo = require('./multerVideo');
 const path = require('path');
@@ -13,6 +13,8 @@ const fs = require('fs');
 
 // Keep the API process alive even if Atlas is temporarily unreachable.
 let isDatabaseReady = false;
+
+const mongoUri = process.env.MONGODB_URI || config.ConnectionString;
 
 mongoose.connection.on('connected', () => {
     isDatabaseReady = true;
@@ -29,7 +31,7 @@ mongoose.connection.on('error', (err) => {
     console.error('MongoDB connection error:', err.message || err);
 });
 
-mongoose.connect(config.ConnectionString, {
+mongoose.connect(mongoUri, {
     serverSelectionTimeoutMS: 10000,
     socketTimeoutMS: 45000,
 })
@@ -278,30 +280,30 @@ app.get('/get-all-stories',authenticateToken,async (req,res)=>{
 }); 
 
 //Route image upload
-app.post('/image-upload',upload.single("image"),async (req,res)=>{
-    try{
-        if(!req.file){
-            return res.status(400).json({error:true,message:"No image uploaded"});
+app.post('/image-upload', upload.single('image'), async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({ error: true, message: 'No image uploaded' });
         }
 
-        const imageUrl=`http://localhost:3000/uploads/${req.file.filename}`;
-        res.status(201).json({imageUrl});
-    } catch(err){
-        res.status(500).json({error:true,message:err.message});  
+        const imageUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
+        res.status(201).json({ imageUrl });
+    } catch (err) {
+        res.status(500).json({ error: true, message: err.message });
     }
 });
 
 //Route video upload
-app.post('/video-upload',uploadVideo.single("video"),async (req,res)=>{
-    try{
-        if(!req.file){
-            return res.status(400).json({error:true,message:"No video uploaded"});
+app.post('/video-upload', uploadVideo.single('video'), async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({ error: true, message: 'No video uploaded' });
         }
 
-        const videoUrl=`http://localhost:3000/uploads/${req.file.filename}`;
-        res.status(201).json({videoUrl});
-    } catch(err){
-        res.status(500).json({error:true,message:err.message});  
+        const videoUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
+        res.status(201).json({ videoUrl });
+    } catch (err) {
+        res.status(500).json({ error: true, message: err.message });
     }
 });
 
@@ -465,8 +467,9 @@ app.get('/filter-by-date',authenticateToken,async (req,res)=>{
     }
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
 
 module.exports=app;

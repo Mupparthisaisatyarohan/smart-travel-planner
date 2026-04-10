@@ -14,3 +14,15 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Vercel deployment
+
+This app can be deployed as a static site on Vercel from the `frontend/travel-story-app` folder.
+
+1. Build command: `npm run build`
+2. Output directory: `dist`
+3. Set environment variable: `VITE_API_BASE_URL` to your backend URL (for example `https://api.example.com`).
+
+> The backend server must be hosted separately; Vercel will only serve the React frontend.
+
+If you deploy the backend elsewhere, make sure the backend exposes the same endpoints as the app expects, and that `VITE_API_BASE_URL` points to that deployed backend.
